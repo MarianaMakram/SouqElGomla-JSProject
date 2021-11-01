@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cart</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+
+  body{
+    background-color: gainsboro;
+    margin: 0;
+  }
+
+    /* ooooooooooooooooooooooooooooo */
+
+    #maimMenu{
+      box-shadow:0 4px 4px -4px rgb(0 0 0 / 12);
+      background-color: white;
+      margin:0 auto;
+      text-align: center;
+      position:relative;
+    }
+    #caregory{
+      display: inline-block;
+      padding: 0 20px;
+      padding-right:100px;
+    }
+    .icon{
+      display: inline-block;
+      color:#b54c26;
+      font-size:20px;
+    }
+
+    .menuText{
+      display: inline-block;
+    }
+
+    h5{
+      display: inline-block;
+      color:#ed872f;
+      font-family: Arial,sans-serif;
+      font-size: 20px;
+    }
+    h5:hover{
+      color:#b54c26;
+    }
+
+    #logoCon{
+      display: inline-block;
+      position:relative;
+    }
+
+    #logo{
+      display: inline-block;
+      width:80px;
+      position:absolute;
+      right:-2px;
+      bottom:-30px;
+    }
+
+    #search{
+      display: inline-block;
+      width:40%;
+      position: relative;
+    }
+
+    #search>form>input{
+      width:95%;
+      margin-right:0px;
+      height:30px;
+    }
+
+    #search>form>button{
+      width:15%;
+      margin-left:0px;
+      height:30px;
+      border-radius:3rem;
+      background-color: #ed872f;
+      border: solid 2px #ed872f;
+      position: absolute;
+      z-index:3;
+      height:36px;
+      right:0px;
+    }
+    #search>form>button:hover{
+      background-color: #b54c26;
+      border: solid 2px #b54c26;
+    }
+
+    #search_icon{
+      color:white;
+
+    }
+
+    #items{
+      display: inline-block;
+      margin:0 auto;
+    }
+
+    .item{
+      display: inline-block;
+      margin:0 auto;
+      padding: 0 20px;
+    }
+
+
+    #secMenu{
+      width:100%;
+      height:40px;
+      background-color:#ed872f;
+    }
+    /*footer*/
+    .footer{
+      width:100%;
+      background-color:#b54c26;
+      margin-top: 50px;
+      /*box-shadow:2px -5px 10px #888888;*/
+    }
+    .copywrite{
+      background-color:#b54c26;
+      width: 100%;
+      top:330px;
+    }
+
+    /*dropdown categories*/
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .squ{
+      width:40px;
+      height: 40px;
+      display: none;
+      position: absolute;
+      background-color: white;
+      top:85px;
+      left:200px;
+      box-shadow: 2px -5px 5px rgb(0,0,0,0.1);
+      z-index: 0;
+      transform: rotate(45deg);
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      width: 460px;
+      top:100px;
+      box-shadow: 2px 20px 10px rgb(0,0,0,0.2);
+      z-index: 1;
+      font-family: Arial,sans-serif;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .dropdown-content a {
+      color:gray;
+      font-family: Arial,sans-serif;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {background-color: #ed872f; color:white;}
+
+    /* Show the dropdown menu on hover */
+    #caregory:hover .dropdown-content {display: block;}
+    #caregory:hover .squ {display: block;}
+
+
+    /* ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp */
+
+    #mainDev {
+      background-color: gainsboro;
+      width: 100%;
+      height: 850px;
+    }
+
+    #cont {
+      width: 80%;
+      margin-left: 10%;
+
+      height: 100%;
+      padding-top: 50px;
+
+    }
+
+    #cont2 {
+      width: 80%;
+      margin-left: 10%;
+
+      height: 100%;
+      padding-top: 50px;
+    }
+
+    #cart {
+      width: 100%;
+      float: left;
+      font-weight: bold;
+      margin-bottom: 50px;
+    }
+
+    .cartShow {
+      clear: both;
+
+      width: 100%;
+
+      height: 150px;
+      background-color: white;
+      padding-top: 30px;
+      border-radius: 30px;
+      margin-top: 50px;
+    }
+
+    .cartImg {
+      float: left;
+      height: 100%;
+      width: 15%;
+    }
+
+    .imCart {
+      width: 80%;
+      padding: 10%;
+      height: 100px;
+    }
+
+    .productName {
+      float: left;
+      width: 30%;
+      height: 100%;
+      margin-top: 40px;
+    }
+
+    .namee {
+
+      width: 100%;
+      height: 70px;
+      text-align: center;
+
+
+
+    }
+
+    .cartLink {
+
+      width: 100%;
+      clear: both;
+      text-align: center;
+      /* margin-top: 20px; */
+      /* height: 40%; */
+    }
+
+    .cartBtn {
+      background-color: orange;
+      color: white;
+      border-radius: 20px;
+      height: 30px;
+    }
+
+    .quntity {
+      float: left;
+      height: 100%;
+      width: 15%;
+      margin-top: 40px;
+    }
+
+    .price {
+      margin-top: 40px;
+      float: left;
+      height: 100%;
+      width: 15%;
+    }
+
+    #colName {
+      /* border: red solid 3px; */
+      float: left;
+      width: 100%;
+      font-weight: bold;
+    }
+
+    #first {
+
+      float: left;
+      width: 45%;
+      height: 50px;
+
+    }
+
+    .q {
+
+      float: left;
+      width: 15%;
+      height: 50px;
+
+    }
+
+    #check {
+      float: right;
+    }
+  </style>
+</head>
+
+<body>
+<!-- fffffffffffffffffffffffff -->
+<div> <!-- menu -->
+  <div id="secMenu">
+    <h5 style="float:left; color:white; padding-left:70px; padding-top:7px; margin:5px;
+    font-size:15px; font-family:Arial,sans-serif;">login/register</h5>
+    <h5 style="float:right; color:white; padding-right:70px; padding-top:7px; margin:5px;
+    font-size:15px; font-family:Arial,sans-serif;">language: EN</h5>
+  </div>
+  <div id="maimMenu">
+    <div id="caregory">
+      <div class="icon">
+      <div class="squ">
+      </div>
+      <div class="dropdown-content">
+          <a href="#">Beverages:tea,coffee,etc</a>
+          <a href="#">Bread & Bakery</a>
+          <a href="#">Breakfast & Cereal</a>
+          <a href="#">Condiments/Spices & Bake</a>
+          <a href="#">Cookies, Snacks & Candy</a>
+          <a href="#">Canned Goods & Soups</a>
+          <a href="#">Frozen Foods</a>
+          <a href="#">Dairy, Eggs & Cheese</a>
+          <a href="#">Produce: Fruits & Vegetables</a>
+          <a href="#">Grains, Pasta & Sides</a>
+          <a href="#">Meat & Seafood</a>
+        </div>
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </div>
+      <div class="menuText">
+        <h5>Categories</h5>
+      </div>
+    </div>
+    <div id="logoCon">
+      <img src="finalLogo-en.png" alt="logo" id="logo">
+    </div>
+    <div id="search">
+      <form>
+        <input type="text"  placeholder="search">
+        <button type="submit" name="button"><i class="fa fa-search" id="search_icon" aria-hidden="true"></i></button>
+      </form>
+    </div>
+    <div id="items">
+      <div class="item">
+        <div class="icon">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        </div>
+        <div class="menuText">
+          <h5>Card</h5>
+        </div>
+      </div>
+      <div class="item">
+        <div class="icon">
+          <i class="fa fa-question-circle" aria-hidden="true"></i>
+        </div>
+        <div class="menuText">
+          <h5>Help</h5>
+        </div>
+      </div>
+      <div class="item">
+        <div class="icon">
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </div>
+        <div class="menuText">
+          <h5>My Account</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+  <div id="mainDev">
+    <header></header>
+    <div id="cont">
+      <div id=cont2>
+        
+        
+      </div>
+      <div id="total">
+
+      </div>
+    </div>
+  </div>
+
+  <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+<div class="footer">
+  <div class="footerCont" style="padding:20px 50px; height:270px;">
+    <div class="continer" style="display:inline-block; width:24%;">
+      <img style="display:inline-block; width:120px; padding-top:-20px;" src="whiteLogo.png" alt="logo">
+    </div>
+    <div class="continer" style="display:inline-block; width:24%;">
+      <h4 style="color:#f5f5f5;  font-family: Arial,sans-serif;">Categories</h4>
+      <ul>
+        <li style="color:#f5f5f5;  font-family: Arial,sans-serif;">Beverages:tea,coffee,etc</li>
+        <li style="color:#f5f5f5;  font-family: Arial,sans-serif;">Bread & Bakery</li>
+        <li style="color:#f5f5f5;  font-family: Arial,sans-serif;">Breakfast & Cereal</li>
+        <li style="color:#f5f5f5;  font-family: Arial,sans-serif;">Condiments/Spices & Bake</li>
+        <li style="color:#f5f5f5;  font-family: Arial,sans-serif;">Cookies, Snacks & Candy</li>
+        <li style="color:#f5f5f5;  font-family: Arial,sans-serif;">Frozen Foods</li>
+        <li style="color:#f5f5f5;  font-family: Arial,sans-serif;">Produce: Fruits & Vegetables</li>
+        <li style="color:#f5f5f5;  font-family: Arial,sans-serif;">Grains, Pasta & Sides</li>
+        <li style="color:#f5f5f5;  font-family: Arial,sans-serif;">Meat & Seafood</li>
+      </ul>
+    </div>
+    <div class="continer" style="display:inline-block; width:24%;">
+      <h4 style="color:#f5f5f5;  font-family: Arial,sans-serif;">MY Account</h4>
+      <ul>
+        <li style="color:#f5f5f5;  font-family: Arial,sans-serif;">Card</li>
+        <li style="color:#f5f5f5;  font-family: Arial,sans-serif;">Help</li>
+        <li style="color:#f5f5f5;  font-family: Arial,sans-serif;">Log out</li>
+
+      </ul>
+   </div>
+   <div class="continer" style="display:inline-block; width:24%;">
+     <h4 style="color:#f5f5f5;  font-family: Arial,sans-serif;">Most visited</h4>
+     <ul>
+       <li style="color:#f5f5f5;  font-family: Arial,sans-serif;">Beverages:tea,coffee,etc</li>
+       <li style="color:#f5f5f5;  font-family: Arial,sans-serif;">Breakfast & Cereal</li>
+       <li style="color:#f5f5f5;  font-family: Arial,sans-serif;">Cookies, Snacks & Candy</li>
+       <li style="color:#f5f5f5;  font-family: Arial,sans-serif;">Frozen Foods</li>
+       <li style="color:#f5f5f5;  font-family: Arial,sans-serif;">Dairy, Eggs & Cheese</li>
+       <li style="color:#f5f5f5;  font-family: Arial,sans-serif;">Grains, Pasta & Sides</li>
+     </ul>
+  </div>
+ </div>
+ <hr >
+ <div class="copywrite" style="margin:0 auto; text-align:center;">
+    <i class="fa fa-copyright" aria-hidden="true" style="color:#f5f5f5;  display:inline-block; "></i>
+    <h4 style="color:#f5f5f5; display:inline-block; font-family:Arial,sans-serif; padding:0px 0; ">“Copyright.G3 team at ITI .net Sohag 2021”</h4>
+ </div><!-- footer --> <!-- footer -->
+ <!--//////////////////////////////////////////////////////////////////////////////////////////////////////-->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+const cartListEl = document.getElementById('cont2');
+const totalEl = document.getElementById('total');
+const checkoutEl = document.getElementById('checkout');
+
+let products = [];
+
+// get cart items from local storage
+const getProducts = () => {
+    const temp = localStorage.getItem('product');
+    const cartArr = JSON.parse(temp);
+    if (cartArr === null || cartArr === undefined || cartArr.length == 0) {
+        alert('Cart is Empty .. Nothing to Show');
+
+        cartListEl.innerHTML = `
+    <div id="colName" style='background:white'>
+          <div id="first"></div>
+          <div class="q">
+            <p>Empty</p>
+          </div>
+          <div class="q">
+            <p>Cart</p>
+          </div>
+        </div>
+    `;
+
+    } else {
+
+        products = cartArr;
+       console.log(products);
+        displayCart();
+        calculateCartTotal();
+    }
+};
+
+// display cart details
+const displayCart = () => {
+    cartListEl.innerHTML = `
+    <div id="colName">
+          <div id="first"></div>
+          <div class="q">
+            <p>quntity</p>
+          </div>
+          <div class="q">
+            <p>Price</p>
+          </div>
+        </div>
+    `;
+
+    cartListEl.innerHTML += products.map(product=>`
+    <div class="cartShow">
+          <div class="cartImg">
+
+            <img src="${product.image}" alt="" class="imCart">
+          </div>
+          <div class="productName">
+
+            <div class="namee">
+              <p>${product.title}</p>
+            </div>
+            <div class="cartLink">
+              <button id="${product.id}" class="cartBtn removeBtn"> Remove</button>
+            </div>
+          </div>
+          <div class="quntity">
+
+            <p>${product.qty}</p>
+
+          </div>
+          <div class="price">
+
+            <p>EGP ${product.price}</p>
+          </div>
+        </div>
+        <div style="float: left; width: 100%; height: 40px;"></div>
+    `)
+    .join('');
+
+    cartListEl.innerHTML += `
+    <div id="check">
+          <button class="cartBtn" id="goShoping">Continue Shopping</button>
+          <button class="cartBtn" id="checkout">Continue to checkout</button>
+        </div>
+    `;
+    // enable remove item button
+    $(".removeBtn").on('click', deleteFromCart);
+};
+
+// delete item from cart
+function deleteFromCart(){
+    currId = this.id;
+    // update the cartArr
+    for (const i in products){
+        if (products[i].id == currId){
+            if(products[i].qty > 1){
+                products[i].qty -= 1;
+            }else{
+                products.splice(i,1);
+            }
+        }
+    }
+    updateInLocalStorage();
+    getProducts();
+}
+
+// update cart in local storage
+function updateInLocalStorage(){
+    localStorage.setItem('product', JSON.stringify(products));
+}
+
+// calculate cart total
+function calculateCartTotal(){
+    let cartTotal = 0;
+    for (const product of products){
+        let currTotal = product.qty * product.price;
+        cartTotal += currTotal; 
+    }
+    updateCartTotal(cartTotal);
+}
+
+// updates cart total in DOM and local storage
+function updateCartTotal(cartTotal){
+    totalEl.innerHTML = ` TOTAL : $ ${cartTotal}`;
+    localStorage.setItem('cartTotal', cartTotal);
+}
+
+// checkout function
+function checkout(){
+    window.location.href = "checkOut.html";
+}
+
+// checkout function
+function goShoping(){
+    window.location.href = "index.html";
+}
+
+
+getProducts();
+$("#checkout").on('click', checkout);
+$("#goShoping").on('click', goShoping);
+
+
+</script>
+</body>
+
+</html>
